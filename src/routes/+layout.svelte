@@ -2,6 +2,8 @@
 	import '../styles.css';
 	import Navbar from '$lib/Navbar.svelte';
 	import Footer from '$lib/Footer.svelte';
+
+        export const prerender = true;
 </script>
 
 <main
