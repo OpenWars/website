@@ -1,7 +1,3 @@
-<script>
-	export let data;
-</script>
-
 <section class="mb-8">
 	<div class="flex flex-col justify-center items-center">
 		<img
@@ -61,10 +57,14 @@
 		</div>
 		<div class="bg-zinc-800 p-4 rounded-b-md">
 			<p class="font-bold text-zinc-500 underline underline-offset-4">
-				Latest post from {data.metadata.author} on {data.metadata.date}
+				Latest post from Ilai - 01/01/2024
 			</p>
-			<h3 class="font-extrabold text-2xl mt-2">{data.metadata.title}</h3>
-			<p>{data.metadata.description}</p>
+			<h3 class="font-extrabold text-2xl mt-2">Updates about the game and that BS</h3>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, natus saepe minus
+				voluptatibus id praesentium, omnis accusamus ab libero quaerat aliquid sit ullam dicta
+				voluptas atque dolor beatae. Recusandae, porro!
+			</p>
 		</div>
 	</div>
 </section>
