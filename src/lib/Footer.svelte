@@ -3,11 +3,9 @@
 	import IconDiscord from '@tabler/icons-svelte/icons/brand-discord';
 	import IconTwitter from '@tabler/icons-svelte/icons/brand-twitter';
 	import IconYoutube from '@tabler/icons-svelte/icons/brand-youtube';
-	import IconReddit from '@tabler/icons-svelte/icons/brand-reddit';
 
 	const links = [
 		['News', '/news'],
-		['About', '/about'],
 		['Download', '/download'],
 		['Community', '/community'],
 		['Resources', '/resources']
@@ -15,10 +13,9 @@
 
 	const socials = [
 		['GitHub', 'https://github.com/OpenWars', IconGithub, 'text-white'],
-		['Discord', '#', IconDiscord, 'text-[#5865F2]'],
+		['Discord', 'https://discord.gg/g5twuMG44e', IconDiscord, 'text-[#5865F2]'],
 		['Twitter', '#', IconTwitter, 'text-[#1DA1F2]'],
 		['YouTube', '#', IconYoutube, 'text-[#FF0000]'],
-		['Reddit', '#', IconReddit, 'text-[#FF4500]']
 	];
 </script>
 
