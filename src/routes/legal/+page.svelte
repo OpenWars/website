@@ -8,7 +8,7 @@
     <h2 class="font-bold text-2xl mb-4">Engine</h2>
     <ul class="list-disc marker:text-brand space-y-2">
       <li>Our engine's source code is fully available for the public on our GitHub.</li>
-      <li>The engine is licensed with the Affero GNU Public License, which makes it fall under the Free Software Fundation's definition of <strong>free/libre software</strong> and is <strong>OSI approved</strong>.</li>
+      <li>The engine is licensed with the GNU Affero General Public License, which makes it fall under the Free Software Fundation's definition of <strong>free/libre software</strong> and is <strong>OSI approved</strong>.</li>
     </ul>
   </div>
   <div>
