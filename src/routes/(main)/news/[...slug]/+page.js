@@ -5,7 +5,7 @@
 export async function load({ params }) {
   let slugs = params.slug.split("/")
   console.log(slugs)
-  const { default: post, metadata } = await import(`../../../posts/${slugs[0]}/${slugs[1]}.md`)
+  const { default: post, metadata } = await import(`../../../../posts/${slugs[0]}/${slugs[1]}.md`)
 
   if (!post) {
     return {

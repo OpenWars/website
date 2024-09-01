@@ -1,5 +1,5 @@
 export async function load() {
-  const mdMod = import.meta.glob("../../posts/**/*.md")
+  const mdMod = import.meta.glob("../../../posts/**/*.md")
 
   let posts = {}
   Object.keys(mdMod)
