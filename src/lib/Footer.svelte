@@ -15,11 +15,18 @@
 		['GitHub', 'https://github.com/OpenWars', IconGithub, 'text-white'],
 		['Discord', 'https://discord.gg/g5twuMG44e', IconDiscord, 'text-[#5865F2]'],
 		['Twitter', '#', IconTwitter, 'text-[#1DA1F2]'],
-		['YouTube', '#', IconYoutube, 'text-[#FF0000]'],
+		['YouTube', '#', IconYoutube, 'text-[#FF0000]']
 	];
 </script>
 
-<footer class="mt-4 p-4 bg-zinc-900">
+<section class="mt-4 p-8 bg-gradient-to-br from-brand to-brandDark flex justify-between">
+	<p class="text-2xl font-bold">Your mission starts now.</p>
+	<a
+		class="p-2 bg-white rounded-md text-brand text-sm transition hover:bg-brandDark hover:text-white hover:-translate-y-1"
+		href="/download">Download now</a
+	>
+</section>
+<footer class="p-4 bg-zinc-900">
 	<div class="flex flex-col md:flex-row justify-around items-center px-16">
 		<div class="flex flex-col items-center w-fit">
 			<img
@@ -56,4 +63,3 @@
 		</div>
 	</div>
 </footer>
-
