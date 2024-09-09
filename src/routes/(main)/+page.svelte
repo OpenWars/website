@@ -5,7 +5,7 @@
 <section class="mb-8">
 	<div class="flex flex-col justify-center items-center">
 		<img
-			src="https://raw.githubusercontent.com/OpenWars/branding/main/owlogo.svg"
+			src="https://raw.githubusercontent.com/OpenWars/branding/main/owlogo.png"
 			alt="OpenWars logo"
 			width={624}
 			height={512}
