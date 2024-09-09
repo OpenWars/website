@@ -2,6 +2,11 @@
 	import '../../styles.css';
 </script>
 
+<svelte:head>
+	<title>OpenWars Resource Center</title>
+	<meta name="description" content="Resource center for the OpenWars game." />
+</svelte:head>
+
 <main class="blueprint min-h-screen text-white">
 	<slot />
 </main>
