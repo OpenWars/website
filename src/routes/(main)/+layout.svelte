@@ -6,11 +6,10 @@
 
 <svelte:head>
 	<title>OpenWars</title>
-	<meta name="description" content="Welcome back, Advisor. Your mission starts now." />
-	<meta property="og:title" content="OpenWars" />
 	<meta property="og:site_name" content="OpenWars" />
+	<meta property="og:type" content="website" />
 	<meta property="og:description" content="Welcome back, Advisor. Your mission starts now." />
-	<meta property="theme-color" content="#243519" />
+	<meta property="theme-color" content="#647559" />
 </svelte:head>
 
 <main
