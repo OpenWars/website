@@ -5,6 +5,10 @@
 <svelte:head>
 	<title>OpenWars Resource Center</title>
 	<meta name="description" content="Resource center for the OpenWars game." />
+	<meta name="og:title" content="OpenWars Resource Center" />
+	<meta name="og:site_name" content="OpenWars" />
+	<meta name="og:description" content="Resource center for the OpenWars game." />
+	<meta name="theme-color" content="#3b82f6" />
 </svelte:head>
 
 <main class="blueprint min-h-screen text-white">
