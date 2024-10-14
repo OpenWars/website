@@ -13,7 +13,7 @@
 			<p class="font-semibold text-brand text-center">
 				Written by {data.metadata.author}
 			</p>
-			<p class="text-center text-brand mt-0">3 minute read - {data.metadata.date}</p>
+			<p class="text-center text-brand mt-0">{data.metadata.readingTime} minute read - {data.metadata.date}</p>
 			<hr class="border-brand mt-1" />
 		</div>
 	</div>

@@ -4,7 +4,6 @@
  */
 export async function load({ params }) {
   let slugs = params.slug.split("/")
-  console.log(slugs)
   const { default: post, metadata } = await import(`../../../../posts/${slugs[0]}/${slugs[1]}.md`)
 
   if (!post) {
@@ -16,7 +15,7 @@ export async function load({ params }) {
   return {
     metadata: {
       ...metadata,
-      //readingTime: Math.ceil(post.split(" ").length / 200)
+      readingTime: Math.ceil(`${post}\n`.split(" ").length / 200)
     }, post
   }
 }
