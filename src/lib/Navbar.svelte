@@ -16,7 +16,7 @@
 				width={34}
 				height={34}
 			/>
-			<h1 class="font-bold text-2xl">OpenWars</h1>
+			<a href="/" class="font-bold text-2xl">OpenWars</a>
 		</div>
 		<nav>
 			<ul class="space-x-6 flex">
