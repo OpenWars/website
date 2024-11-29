@@ -38,7 +38,7 @@
 	</div>
 </section>
 <section class="mt-4">
-	<div class="p-4 flex justify-around items-center">
+	<div class="p-4 flex flex-col sm:flex-row justify-around items-center">
 		<button
 			class={`p-4 bg-zinc-800 rounded-md font-bold text-xl flex flex-col items-center transition w-1/4 ${active == 'windows' ? 'border-brand border-b-2 -translate-y-1' : ''}`}
 			on:click={() => (active = 'windows')}
