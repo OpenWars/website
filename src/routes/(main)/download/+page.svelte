@@ -30,9 +30,8 @@
 			<h2 class="text-2xl font-bold mb-2">Licensing and game assets.</h2>
 			<p>
 				The OpenWars engine is free/libre (as in "free speech") and open source software under the
-				GPL license. The game requires some assets from the original games, which we provide
-				(required ones only). Some of them are not under our license.<br />
-				Please see our <a class="underline font-bold" href="/legal">legal notice.</a>
+				GPL license. The game does not require original game assets. Distributed assets are under a
+				Creative Commons license. See <a class="underline font-bold" href="/legal">legal notice.</a>
 			</p>
 		</div>
 	</div>
