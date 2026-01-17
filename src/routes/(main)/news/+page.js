@@ -4,7 +4,6 @@ export async function load() {
   let posts = {}
   Object.keys(mdMod)
     .forEach(async (path) => {
-      console.log(path)
       const year = path.split("/").at(-2)
       // @ts-expect-error - shut up
       const { metadata } = await mdMod[path]()
