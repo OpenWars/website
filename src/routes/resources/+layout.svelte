@@ -1,5 +1,12 @@
 <script>
 	import '../../styles.css';
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('svelte').Snippet} [children]
+	 */
+
+	/** @type {Props} */
+	let { children } = $props();
 </script>
 
 <svelte:head>
@@ -12,7 +19,7 @@
 </svelte:head>
 
 <main class="blueprint min-h-screen text-white">
-	<slot />
+	{@render children?.()}
 </main>
 
 <style lang="postcss">

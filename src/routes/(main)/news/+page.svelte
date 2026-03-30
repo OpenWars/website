@@ -1,5 +1,5 @@
 <script>
-	export let data;
+	let { data } = $props();
 	const entries = Object.entries(data.posts).sort(
 		(yearEntryA, yearEntryB) => parseInt(yearEntryB[0]) - parseInt(yearEntryA[0])
 	);

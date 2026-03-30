@@ -53,10 +53,11 @@
 		<div class="pt-4">
 			<ul class="flex flex-col space-y-2 text-center md:text-left">
 				{#each socials as social}
+					{@const SvelteComponent = social[2]}
 					<a
 						class={'underline-offset-2 hover:text-brand transition flex ' + social[3]}
 						href={social[1]}
-						><span><svelte:component this={social[2]} class="mr-2" /></span>{social[0]}</a
+						><span><SvelteComponent class="mr-2" /></span>{social[0]}</a
 					>
 				{/each}
 			</ul>

@@ -1,5 +1,5 @@
 <script>
-	export let data;
+	let { data } = $props();
 </script>
 
 <article
@@ -17,5 +17,5 @@
 			<hr class="border-brand mt-1" />
 		</div>
 	</div>
-	<svelte:component this={data.post} />
+	<data.post />
 </article>

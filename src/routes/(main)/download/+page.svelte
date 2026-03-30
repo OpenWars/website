@@ -4,7 +4,7 @@
 	import IconWarning from '@tabler/icons-svelte/icons/alert-triangle-filled';
 	import IconInfo from '@tabler/icons-svelte/icons/info-circle';
 
-	let active = 'windows';
+	let active = $state('windows');
 </script>
 
 <section class="mt-4">
@@ -39,6 +39,8 @@
 <section class="mt-4">
 	<div class="p-4 flex flex-col sm:flex-row justify-around items-center">
 		<button
+			class={`p-4 bg-zinc-800 rounded-md font-bold text-xl flex flex-col items-center transition w-full ${active == 'windows' ? 'shadow-brand -translate-y-1' : ''}`}
+			onclick={() => (active = 'windows')}
 			class={`p-4 bg-zinc-800 rounded-md font-bold text-xl flex flex-col items-center transition w-1/4 ${active == 'windows' ? 'border-brand border-b-2 -translate-y-1' : ''}`}
 			on:click={() => (active = 'windows')}
 		>
@@ -47,7 +49,7 @@
 		</button>
 		<button
 			class={`p-4 bg-zinc-800 rounded-md font-bold text-xl flex flex-col items-center transition w-1/4 ${active == 'linux' ? 'border-brand border-b-2 -translate-y-1' : ''}`}
-			on:click={() => (active = 'linux')}
+			onclick={() => (active = 'linux')}
 		>
 			<IconUbuntu class="text-orange-500 w-12 h-12" />
 			Linux
