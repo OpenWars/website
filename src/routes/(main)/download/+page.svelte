@@ -110,15 +110,18 @@
 					class="px-6 py-4 bg-brand rounded-md flex-1 transition hover:-translate-y-1 font-medium"
 				>
 					<h3 class="mb-2 text-base font-semibold">Download Stable</h3>
-					<span class="inline-block px-3 py-1 bg-brandDark rounded font-mono text-sm">v0.0.0</span>
+					<span
+						class="inline-block px-3 py-0.5 w-full bg-brandDark/10 rounded font-mono text-sm uppercase shadow-inner"
+						>Version {platforms[active].download.stable.version}</span
+					>
 				</button>
 				<button
-					class="px-6 py-4 under-construction hover:bg-amber-500 rounded-md flex-1 transition font-medium"
+					class="px-6 py-4 under-construction hover:bg-amber-500 rounded-md flex-1 transition hover:-translate-y-1 font-medium"
 				>
 					<h3 class="mb-2 text-base font-semibold">Download Testing</h3>
 					<span
-						class="inline-block px-3 py-0.5 w-full bg-amber-400 rounded font-mono text-sm uppercase shadow-inner"
-						>Version 0.0.1-beta (Build 001)</span
+						class="inline-block px-3 py-0.5 w-full bg-amber-500/30 rounded font-mono text-sm uppercase shadow-inner"
+						>Version {platforms[active].download.testing.version}</span
 					>
 				</button>
 			</div>
