@@ -3,19 +3,23 @@
 </script>
 
 <article
-	class="prose md:prose-lg prose-zinc prose-invert before:prose-code:content-[''] after:prose-code:content-[''] prose-a:decoration-offset-4 prose-a:decoration-brand prose-a:decoration-2 hover:prose-a:transition hover:prose-a:text-brand m-4 p-4 bg-zinc-900 !max-w-none"
+	class="prose md:prose-lg prose-zinc prose-invert before:prose-code:content-[''] after:prose-code:content-[''] prose-a:decoration-offset-4 prose-a:decoration-brand prose-a:decoration-2 hover:prose-a:transition hover:prose-a:text-brand px-4 py-8 md:py-12 bg-zinc-900 !max-w-none"
 >
-	<div class="not-prose mx-6">
-		<h1 class="text-4xl md:text-6xl font-black text-center mb-2">{data.metadata.title}</h1>
-		<p class="text-zinc-500 text-xl text-center font-bold">{data.metadata.description}</p>
-		<div class="mt-4 max-w-1/2">
-			<hr class="border-brand mb-1" />
-			<p class="font-semibold text-brand text-center">
+	<div class="not-prose mx-auto max-w-2xl mb-8">
+		<h1 class="text-3xl md:text-5xl font-black text-center mb-3">{data.metadata.title}</h1>
+		<p class="text-zinc-400 text-base md:text-lg text-center font-medium mb-6">
+			{data.metadata.description}
+		</p>
+		<div class="px-4 py-4 border-l-4 border-brand bg-zinc-800 rounded-r">
+			<p class="font-semibold text-brand text-sm text-center mb-1">
 				Written by {data.metadata.author}
 			</p>
-			<p class="text-center text-brand mt-0">{data.metadata.readingTime} minute read - {data.metadata.date}</p>
-			<hr class="border-brand mt-1" />
+			<p class="text-center text-zinc-400 text-xs">
+				{data.metadata.readingTime} minute read - {data.metadata.date}
+			</p>
 		</div>
 	</div>
-	<data.post />
+	<div class="max-w-2xl mx-auto">
+		<data.post />
+	</div>
 </article>
