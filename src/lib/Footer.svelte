@@ -21,7 +21,7 @@
 
 <div>
 	<section
-		class="mt-8 px-6 py-8 md:px-8 bg-gradient-to-br from-brand to-brandDark flex flex-col md:flex-row justify-between gap-4 items-center md:items-start"
+		class="mt-8 px-6 py-8 md:px-8 bg-linear-to-br from-brand to-brandDark flex flex-col md:flex-row justify-between gap-4 items-center md:items-start"
 	>
 		<p class="text-xl md:text-2xl font-bold text-center md:text-left">Your mission starts now.</p>
 		<a

@@ -57,7 +57,7 @@
 </section>
 <section class="py-12 md:py-16 px-4">
 	<div class="max-w-4xl mx-auto">
-		<div class="bg-gradient-to-r from-brand to-brandDark w-full px-6 py-4 rounded-t-md">
+		<div class="bg-linear-to-r from-brand to-brandDark w-full px-6 py-4 rounded-t-md">
 			<h2 class="text-lg font-medium">
 				Latest news from developers <a
 					class="underline underline-offset-2 font-semibold"

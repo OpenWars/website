@@ -3,7 +3,7 @@
 </script>
 
 <article
-	class="prose md:prose-lg prose-zinc prose-invert before:prose-code:content-[''] after:prose-code:content-[''] prose-a:decoration-offset-4 prose-a:decoration-brand prose-a:decoration-2 hover:prose-a:transition hover:prose-a:text-brand px-4 py-8 md:py-12 bg-zinc-900 !max-w-none"
+	class="prose md:prose-lg prose-zinc prose-invert prose-code:before:content-[''] prose-code:after:content-[''] prose-a:decoration-offset-4 prose-a:decoration-brand prose-a:decoration-2 prose-a:hover:transition prose-a:hover:text-brand px-4 py-8 md:py-12 bg-zinc-900 max-w-none!"
 >
 	<div class="not-prose mx-auto max-w-2xl mb-8">
 		<h1 class="text-3xl md:text-5xl font-black text-center mb-3">{data.metadata.title}</h1>

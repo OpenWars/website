@@ -11,14 +11,14 @@
 			icon: IconWindows,
 			color: 'text-blue-500',
 			label: 'OpenWars works best on computers running Windows 8 or later that support OpenGL 3+',
-			additional: 'x32-bit binaries are not distributed but should work. Build them manually.',
+			additional: '32-bit binaries are not distributed but should work. Build them manually.',
 			download: {
 				stable: {
-					version: '0.0.0',
+					version: '0.0.0 (Build 001)',
 					url: '#'
 				},
 				testing: {
-					version: '0.0.0',
+					version: '0.0.1-beta (Build 001)',
 					url: '#'
 				}
 			}
@@ -31,7 +31,7 @@
 				'OpenWars is distributed as portable AppImages that should work on modern x64-bit Linux distributions',
 			download: {
 				stable: {
-					version: '0.0.0',
+					version: '0.0.0 (Build 001)',
 					url: '#'
 				},
 				testing: {
@@ -96,7 +96,7 @@
 			{/each}
 		</div>
 		<div class="px-6 py-6 bg-zinc-900 rounded-md">
-			<div class="flex items-center gap-3 mb-6 p-3 bg-zinc-800 rounded">
+			<div class="flex items-center gap-3 mb-6 p-3 bg-zinc-800 rounded-sm">
 				<IconWarning class="w-5 h-5 shrink-0 mt-0.5" />
 				<span class="text-sm"
 					>Currently, everything is under construction and we don't provide any playable builds yet.
@@ -111,7 +111,7 @@
 				>
 					<h3 class="mb-2 text-base font-semibold">Download Stable</h3>
 					<span
-						class="inline-block px-3 py-0.5 w-full bg-brandDark/10 rounded font-mono text-sm uppercase shadow-inner"
+						class="inline-block px-3 py-0.5 w-full bg-brandDark/15 rounded-sm font-mono text-sm uppercase shadow-inner"
 						>Version {platforms[active].download.stable.version}</span
 					>
 				</button>
@@ -120,14 +120,14 @@
 				>
 					<h3 class="mb-2 text-base font-semibold">Download Testing</h3>
 					<span
-						class="inline-block px-3 py-0.5 w-full bg-amber-500/30 rounded font-mono text-sm uppercase shadow-inner"
+						class="inline-block px-3 py-0.5 w-full bg-amber-500/30 rounded-sm font-mono text-sm uppercase shadow-inner"
 						>Version {platforms[active].download.testing.version}</span
 					>
 				</button>
 			</div>
 
 			{#if platforms[active].additional}
-				<div class="mt-6 flex items-center gap-3 p-3 bg-blue-600 rounded">
+				<div class="mt-6 flex items-center gap-3 p-3 bg-blue-600 rounded-sm">
 					<IconInfo class="w-5 h-5 shrink-0 mt-0.5" />
 					<span class="text-sm">{platforms[active].additional}</span>
 				</div>
@@ -136,7 +136,9 @@
 	</div>
 </section>
 
-<style lang="postcss">
+<style>
+	@reference "../../../styles.css";
+
 	.under-construction {
 		background-image:
 			repeating-linear-gradient(135deg, transparent, transparent 20px, black 20px, black 50px),
