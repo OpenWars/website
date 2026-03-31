@@ -13,6 +13,31 @@ export const load: PageLoad = async ({ fetch }) => {
 	const req = await fetch('https://api.github.com/repos/openwars/openwars/releases');
 	const res: Release[] = await req.json();
 
+	if (req.status !== 200 || !Array.isArray(res) || res.length == 0) {
+		return {
+			linux: {
+				stable: {
+					version: 'N/A',
+					url: '#'
+				},
+				testing: {
+					version: 'N/A',
+					url: '#'
+				}
+			},
+			windows: {
+				stable: {
+					version: 'N/A',
+					url: '#'
+				},
+				testing: {
+					version: 'N/A',
+					url: '#'
+				}
+			}
+		};
+	}
+
 	const latestStable = res.find((release) => !release.prerelease) as Release;
 	const latestTesting = res.find((release) => release.prerelease) as Release;
 

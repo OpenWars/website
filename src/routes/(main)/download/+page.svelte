@@ -4,8 +4,9 @@
 	import IconWarning from '@tabler/icons-svelte/icons/alert-triangle-filled';
 	import IconInfo from '@tabler/icons-svelte/icons/info-circle';
 	import { onMount } from 'svelte';
+	import type { PageProps } from './$types';
 
-	const { data } = $props();
+	const { data }: PageProps = $props();
 	type Platform = 'windows' | 'linux';
 
 	interface PlatformConfig {
@@ -29,12 +30,16 @@
 			additional: '32-bit binaries are not distributed but should work. Build them manually.',
 			download: {
 				stable: {
+					// svelte-ignore state_referenced_locally
 					version: data.windows.stable.version,
-					url: data.windows.stable.url
+					// svelte-ignore state_referenced_locally
+					url: data.windows.stable.url as string
 				},
 				testing: {
+					// svelte-ignore state_referenced_locally
 					version: data.windows.testing.version,
-					url: data.windows.testing.url
+					// svelte-ignore state_referenced_locally
+					url: data.windows.testing.url as string
 				}
 			}
 		},
@@ -46,12 +51,17 @@
 				'OpenWars is distributed as portable AppImages that should work on modern x64-bit Linux distributions',
 			download: {
 				stable: {
+					// svelte-ignore state_referenced_locally
 					version: data.linux.stable.version,
-					url: data.linux.stable.url
+					// svelte-ignore state_referenced_locally
+					url: data.linux.stable.url as string
 				},
 				testing: {
+					// svelte-ignore state_referenced_locally
 					version: data.linux.testing.version,
-					url: data.linux.testing.url
+					// svelte-ignore state_referenced_locally
+
+					url: data.linux.testing.url as string
 				}
 			}
 		}
