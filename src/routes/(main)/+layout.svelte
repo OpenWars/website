@@ -2,12 +2,6 @@
 	import '../../styles.css';
 	import Navbar from '$lib/Navbar.svelte';
 	import Footer from '$lib/Footer.svelte';
-	/**
-	 * @typedef {Object} Props
-	 * @property {import('svelte').Snippet} [children]
-	 */
-
-	/** @type {Props} */
 	let { children } = $props();
 </script>
 
@@ -17,7 +11,10 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:description" content="Welcome back, Advisor. Your mission starts now." />
 	<meta property="og:url" content="https://openwars.chimoteam.eu.org/" />
-	<meta property="og:image" content="https://raw.githubusercontent.com/OpenWars/branding/main/owlogo.png" />
+	<meta
+		property="og:image"
+		content="https://raw.githubusercontent.com/OpenWars/branding/main/owlogo.png"
+	/>
 	<meta property="theme-color" content="#647559" />
 </svelte:head>
 

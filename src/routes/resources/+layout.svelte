@@ -1,11 +1,6 @@
 <script>
 	import '../../styles.css';
-	/**
-	 * @typedef {Object} Props
-	 * @property {import('svelte').Snippet} [children]
-	 */
 
-	/** @type {Props} */
 	let { children } = $props();
 </script>
 
@@ -22,10 +17,13 @@
 	{@render children?.()}
 </main>
 
-<style lang="postcss">
+<style>
+	@reference "../../styles.css";
+
 	.blueprint {
-		background-color: theme(colors.blue.500);
-		background-image: linear-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px),
+		background-color: var(--color-blue-500);
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px),
 			linear-gradient(90deg, rgba(255, 255, 255, 0.2) 2px, transparent 1px),
 			linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
 			linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);

@@ -1,11 +1,26 @@
-<script>
+<script lang="ts">
 	import IconWindows from '@tabler/icons-svelte/icons/brand-windows';
 	import IconUbuntu from '@tabler/icons-svelte/icons/brand-ubuntu';
 	import IconWarning from '@tabler/icons-svelte/icons/alert-triangle-filled';
 	import IconInfo from '@tabler/icons-svelte/icons/info-circle';
 	import { onMount } from 'svelte';
 
-	const platforms = {
+	const { data } = $props();
+	type Platform = 'windows' | 'linux';
+
+	interface PlatformConfig {
+		name: string;
+		icon: any;
+		color: string;
+		label: string;
+		additional?: string;
+		download: {
+			stable: { version: string; url: string };
+			testing: { version: string; url: string };
+		};
+	}
+
+	const platforms: Record<Platform, PlatformConfig> = {
 		windows: {
 			name: 'Windows',
 			icon: IconWindows,
@@ -14,12 +29,12 @@
 			additional: '32-bit binaries are not distributed but should work. Build them manually.',
 			download: {
 				stable: {
-					version: '0.0.0 (Build 001)',
-					url: '#'
+					version: data.windows.stable.version,
+					url: data.windows.stable.url
 				},
 				testing: {
-					version: '0.0.1-beta (Build 001)',
-					url: '#'
+					version: data.windows.testing.version,
+					url: data.windows.testing.url
 				}
 			}
 		},
@@ -31,21 +46,21 @@
 				'OpenWars is distributed as portable AppImages that should work on modern x64-bit Linux distributions',
 			download: {
 				stable: {
-					version: '0.0.0 (Build 001)',
-					url: '#'
+					version: data.linux.stable.version,
+					url: data.linux.stable.url
 				},
 				testing: {
-					version: '0.0.1-beta (Build 001)',
-					url: '#'
+					version: data.linux.testing.version,
+					url: data.linux.testing.url
 				}
 			}
 		}
 	};
 
-	let active = $state('windows');
+	let active = $state<Platform>('windows');
 
 	onMount(() => {
-		window.navigator.platform.includes('Win') ? (active = 'windows') : (active = 'linux');
+		active = window.navigator.platform.includes('Win') ? 'windows' : 'linux';
 	});
 </script>
 
@@ -87,7 +102,7 @@
 				<button
 					class={`px-6 py-4 bg-zinc-800 rounded-md font-semibold text-lg flex flex-col items-center justify-center gap-2 transition w-full ${active == key ? 'shadow-lg shadow-brand/30 -translate-y-1' : 'hover:bg-zinc-700'}`}
 					onclick={() => {
-						active = key;
+						active = key as Platform;
 					}}
 				>
 					<platform.icon class="{platform.color} w-8 h-8" />
@@ -106,24 +121,26 @@
 			</div>
 			<p class="mb-6 text-sm">{platforms[active].label}</p>
 			<div class="flex flex-col md:flex-row gap-4">
-				<button
+				<a
 					class="px-6 py-4 bg-brand rounded-md flex-1 transition hover:-translate-y-1 font-medium"
+					href={platforms[active].download.stable.url}
 				>
 					<h3 class="mb-2 text-base font-semibold">Download Stable</h3>
 					<span
-						class="inline-block px-3 py-0.5 w-full bg-brandDark/15 rounded-sm font-mono text-sm uppercase shadow-inner"
+						class="inline-block px-3 py-0.5 w-full bg-brandDark/15 rounded-sm font-mono text-sm uppercase shadow-inner text-center"
 						>Version {platforms[active].download.stable.version}</span
 					>
-				</button>
-				<button
+				</a>
+				<a
 					class="px-6 py-4 under-construction hover:bg-amber-500 rounded-md flex-1 transition hover:-translate-y-1 font-medium"
+					href={platforms[active].download.testing.url}
 				>
 					<h3 class="mb-2 text-base font-semibold">Download Testing</h3>
 					<span
-						class="inline-block px-3 py-0.5 w-full bg-amber-500/30 rounded-sm font-mono text-sm uppercase shadow-inner"
+						class="inline-block px-3 py-0.5 w-full bg-amber-500/30 rounded-sm font-mono text-sm uppercase shadow-inner text-center"
 						>Version {platforms[active].download.testing.version}</span
 					>
-				</button>
+				</a>
 			</div>
 
 			{#if platforms[active].additional}
