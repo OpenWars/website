@@ -10,37 +10,46 @@ interface Release {
 }
 
 export const load: PageLoad = async ({ fetch }) => {
-	const req = await fetch('https://api.github.com/repos/openwars/openwars/releases', {
-		headers: {
-			Accept: 'application/vnd.github.v3+json',
-			Origin: 'https://openwars.chimoteam.eu.org'
-		}
-	});
-	const res: Release[] = await req.json();
-
-	if (req.status !== 200 || !Array.isArray(res) || res.length == 0) {
-		return {
-			linux: {
-				stable: {
-					version: 'N/A',
-					url: '#'
-				},
-				testing: {
-					version: 'N/A',
-					url: '#'
-				}
+	const none = {
+		linux: {
+			stable: {
+				version: 'N/A',
+				url: '#'
 			},
-			windows: {
-				stable: {
-					version: 'N/A',
-					url: '#'
-				},
-				testing: {
-					version: 'N/A',
-					url: '#'
-				}
+			testing: {
+				version: 'N/A',
+				url: '#'
 			}
-		};
+		},
+		windows: {
+			stable: {
+				version: 'N/A',
+				url: '#'
+			},
+			testing: {
+				version: 'N/A',
+				url: '#'
+			}
+		}
+	};
+
+	let res: Release[] = [];
+	try {
+		const req = await fetch('https://api.github.com/repos/openwars/openwars/releases', {
+			headers: {
+				Accept: 'application/vnd.github.v3+json',
+				Origin: 'https://openwars.chimoteam.eu.org'
+			}
+		});
+
+		res = await req.json();
+
+		if (req.status !== 200 || !Array.isArray(res) || res.length == 0) {
+			return none;
+		}
+	} catch (e) {
+		console.error('Failed to fetch releases:', e);
+		return none;
 	}
 
 	const latestStable = res.find((release) => !release.prerelease) as Release;
