@@ -10,7 +10,12 @@ interface Release {
 }
 
 export const load: PageLoad = async ({ fetch }) => {
-	const req = await fetch('https://api.github.com/repos/openwars/openwars/releases');
+	const req = await fetch('https://api.github.com/repos/openwars/openwars/releases', {
+		headers: {
+			Accept: 'application/vnd.github.v3+json',
+			Origin: 'https://openwars.chimoteam.eu.org'
+		}
+	});
 	const res: Release[] = await req.json();
 
 	if (req.status !== 200 || !Array.isArray(res) || res.length == 0) {
